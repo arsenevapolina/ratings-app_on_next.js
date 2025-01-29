@@ -6,7 +6,7 @@ import Tag from "@/components/Tag/Tag";
 import { withLayout } from "@/layout/Layout";
 import { JSX, useState } from "react";
 import axios from "axios";
-import { GetStaticProps } from "next/types";
+import { GetStaticProps } from "next";
 import { MenuItem } from "@/interfaces/menu.interface";
 
 function Home({ menu }: HomeProps): JSX.Element {
