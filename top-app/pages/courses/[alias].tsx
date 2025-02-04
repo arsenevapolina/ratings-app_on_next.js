@@ -9,7 +9,7 @@ import { ProductModel } from "@/interfaces/product.interface";
 
 const firstCategory = 0;
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
+function Course({ products }: CourseProps): JSX.Element {
   return <>{products && products.length}</>;
 }
 
@@ -24,12 +24,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   return {
     paths: menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)),
-    fallback: true,
+    fallback: true
   };
 };
 
 export const getStaticProps: GetStaticProps<CourseProps> = async ({
-  params,
+  params
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
     return {
@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
       menu,
       firstCategory,
       page,
-      products,
+      products
     },
   };
 };

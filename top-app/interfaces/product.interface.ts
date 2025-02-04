@@ -3,7 +3,7 @@ export interface ProductCharacteristic {
     name: string;
 }
 
-export interface reviewModel {
+export interface ReviewModel {
     _id: string;
     name: string;
     title: string;
@@ -28,7 +28,7 @@ export interface ProductModel {
   __v: number;
   image: string;
   initialRating: number;
-  reviews: reviewModel[];
+  reviews: ReviewModel[];
   reviewCount: number;
   reviewAvg?: number;
   advantages: string;
