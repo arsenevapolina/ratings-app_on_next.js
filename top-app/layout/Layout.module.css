@@ -38,7 +38,7 @@
 
     .sidebar {
         grid-area: sidebar;
-        display: none;
+        display: none !important;
     }
 
     .header {
