@@ -6,8 +6,6 @@ import Tag from "@/components/Tag/Tag";
 import { TopLevelCategory } from "@/interfaces/page.interface";
 import { HhData } from "@/components/HhData/HhData";
 import { Advantages } from "@/components";
-import P from "@/components/P/P";
-
 
 export const TopPageComponent = ({
   page,
@@ -43,9 +41,18 @@ export const TopPageComponent = ({
           <Advantages advantages={page.advantages} />
         </>
       )}
-      {page.seoText && <P>{page.seoText}</P>}
+      {page.seoText && (
+        <div
+          className={styles.seo}
+          dangerouslySetInnerHTML={{ __html: page.seoText }}
+        />
+      )}
       <Htag tag="h2">Получаемые навыки</Htag>
-      {page.tags.map(t => <Tag key={t} color='primary'>{t}</Tag>)}
+      {page.tags.map((t) => (
+        <Tag key={t} color="primary">
+          {t}
+        </Tag>
+      ))}
     </div>
   );
 };
