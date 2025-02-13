@@ -35,7 +35,7 @@ const Rating = ({
             isEditable && handleSpace(i + 1, e)
           }
         >
-          <StarIcon isEditable={isEditable} />
+          <StarIcon data-is-editable={isEditable} />
         </span>
       );
     });
