@@ -36,6 +36,10 @@
     white-space: nowrap;
 }
 
+.actions {
+    display: flex;
+}
+
 .hr,
 .description,
 .actions {
@@ -149,17 +153,23 @@
     border-bottom: 1px dashed var(--gray-light);
 }
 
-.reviews {
-    overflow: hidden;
-
-    padding: 30px;
-}
-
 .rateTitle a {
     color: var(--primary);
 }
 
-@media screen and (max-width: 1320px) {
+.closed {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+} 
+
+.opened {
+    overflow: hidden;
+    max-height: auto;
+    padding: 30px;
+}
+
+@media screen and (max-width: 2320px) {
     .product {
         grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
         grid-template-areas:
