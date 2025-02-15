@@ -1,4 +1,4 @@
-import { JSX, useEffect, useState, KeyboardEvent, Fragment } from "react";
+import React, { useEffect, useState, KeyboardEvent, Fragment, JSX } from "react";
 import { RatingProps } from "./Rating.props";
 import cn from "classnames";
 import styles from "./Rating.module.css";
@@ -8,8 +8,9 @@ const Rating = ({
   isEditable = false,
   rating,
   setRating,
+  ref, 
   ...props
-}: RatingProps) => {
+}: RatingProps & { ref?: React.Ref<HTMLDivElement> }) => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
     new Array(5).fill(<></>)
   );
@@ -67,7 +68,7 @@ const Rating = ({
   };
 
   return (
-    <div {...props}>
+    <div ref={ref} {...props}>
       {ratingArray.map((r, i) => (
         <Fragment key={i}>{r}</Fragment>
       ))}
