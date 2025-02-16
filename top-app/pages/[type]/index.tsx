@@ -4,6 +4,7 @@ import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MenuItem } from "@/interfaces/menu.interface";
 import { firstLevelMenu } from "@/helpers/helpers";
+import { API } from "@/helpers/api";
 
 interface TypeProps extends Record<string, unknown> {
   menu: MenuItem[];
@@ -40,7 +41,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }) => {
 
   try {
     const { data: menu } = await axios.post<MenuItem[]>(
-      `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`,
+      API.topPage.find,
       { firstCategory: firstCategoryItem.id }
     );
 

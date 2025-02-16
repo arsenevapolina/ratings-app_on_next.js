@@ -4,6 +4,7 @@ import axios from "axios";
 import { GetStaticProps } from "next";
 import { MenuItem } from "@/interfaces/menu.interface";
 import { Input, Textarea } from "@/components";
+import { API } from "@/helpers/api";
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];
@@ -26,7 +27,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
   try {
     const { data: menu } = await axios.post<MenuItem[]>(
-      `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`,
+      API.topPage.find,
       { firstCategory }
     );
 
