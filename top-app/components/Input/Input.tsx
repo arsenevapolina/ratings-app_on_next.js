@@ -5,8 +5,20 @@ import styles from "./Input.module.css";
 
 export const Input = ({
   className,
+  error,
   ref,
   ...props
 }: InputProps & { ref?: React.Ref<HTMLInputElement> }): JSX.Element => {
-  return <input className={cn(className, styles.input)} ref={ref} {...props} />;
+  return (
+    <div className={cn(styles.inputWrapper)}>
+      <input
+        className={cn(styles.input, {
+          [styles.error]: error,
+        })}
+        ref={ref}
+        {...props}
+      />
+      {error && <span className={styles.errorMessage}>{error.message}</span>}
+    </div>
+  );
 };
