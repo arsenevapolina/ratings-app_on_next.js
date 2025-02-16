@@ -1,4 +1,9 @@
-import React, { useEffect, useState, KeyboardEvent, Fragment, JSX } from "react";
+import React, {
+  useEffect,
+  useState,
+  KeyboardEvent,
+  JSX,
+} from "react";
 import { RatingProps } from "./Rating.props";
 import cn from "classnames";
 import styles from "./Rating.module.css";
@@ -6,9 +11,10 @@ import StarIcon from "./star.svg";
 
 const Rating = ({
   isEditable = false,
+  error,
   rating,
   setRating,
-  ref, 
+  ref,
   ...props
 }: RatingProps & { ref?: React.Ref<HTMLDivElement> }) => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
@@ -68,10 +74,17 @@ const Rating = ({
   };
 
   return (
-    <div ref={ref} {...props}>
+    <div
+      ref={ref}
+      {...props}
+      className={cn(styles.ratingWrapper, {
+        [styles.error]: error,
+      })}
+    >
       {ratingArray.map((r, i) => (
-        <Fragment key={i}>{r}</Fragment>
+        <span key={i}>{r}</span>
       ))}
+      {error && <span className={styles.errorMessage}>{error.message}</span>}
     </div>
   );
 };
