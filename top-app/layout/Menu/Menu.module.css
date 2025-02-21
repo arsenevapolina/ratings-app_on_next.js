@@ -37,15 +37,7 @@
 }
 
 .secondLevelBlock {
-    display: none;
-}
-
-.secondLevelBlockOpened {
-    display: block;
-}
-
-.secondLevelBlockOpened:last-child {
-    margin-bottom: 20px;
+   overflow: hidden;
 }
 
 .thirdLevel {
@@ -62,3 +54,4 @@
 .thirdLevel:hover {
     color: var(--primary);
 }
+
