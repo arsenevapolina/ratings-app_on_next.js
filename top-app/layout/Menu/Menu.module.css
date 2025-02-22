@@ -27,6 +27,7 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 16.34px;
+    min-height: 20px;
 }
 
 .secondBlock {
@@ -48,6 +49,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
+    min-height: 20px;
 }
 
 .thirdLevelActive,
