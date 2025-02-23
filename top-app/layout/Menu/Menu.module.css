@@ -27,7 +27,6 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 16.34px;
-    min-height: 20px;
 }
 
 .secondBlock {
@@ -38,22 +37,26 @@
 }
 
 .secondLevelBlock {
-   overflow: hidden;
+    overflow: hidden;
 }
 
 .thirdLevel {
     margin-bottom: 10px;
-    display: block;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     color: var(--gray-dark);
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
     min-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .thirdLevelActive,
 .thirdLevel:hover {
     color: var(--primary);
 }
-
