@@ -38,3 +38,7 @@
     line-height: 27px;
     color: var(--black);
 }
+
+.wrapper {
+    margin-left: 30px;
+}
