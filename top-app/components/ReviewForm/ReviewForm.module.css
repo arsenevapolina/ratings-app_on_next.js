@@ -7,6 +7,7 @@
     grid-template-columns: [start] auto 1fr auto [end];
     gap: 20px 30px;
     justify-items: left;
+    padding: 30px;
 }
 
 .description,
