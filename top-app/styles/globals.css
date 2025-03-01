@@ -3,7 +3,7 @@
   --gray-light: #EBEBEB;
   --gray: #A4A4A4;
   --black: #3B434E;
-  --primary: #7653FC;
+  --primary: #7351f5;
   --primary-hover: #6344df;
   --red: #FC836D;
   --red-light: #fea291;
@@ -11,7 +11,7 @@
   --green-light: #C8F8E4;
   --font-family: "Noto Sans",
     serif;
-  --gray-dark: #787D85;
+  --gray-dark: #6c7077;
 }
 
 html,
