@@ -43,8 +43,8 @@ const Rating = ({
             [styles.filled]: i < currentRating,
             [styles.editable]: isEditable,
           })}
-          onMouseEnter={() => changeDispay(i + 1)}
-          onMouseLeave={() => changeDispay(rating)}
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(rating)}
           onClick={() => onClick(i + 1)}
           tabIndex={computerFocus(rating, i)}
           onKeyDown={handleKey}
