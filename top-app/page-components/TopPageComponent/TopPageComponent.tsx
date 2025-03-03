@@ -8,6 +8,7 @@ import { HhData } from "@/components/HhData/HhData";
 import { Advantages, Product, Sort } from "@/components";
 import { SortEnum } from "@/components/Sort/Sort.props";
 import { sortReducer } from "./sort.reducer";
+import { useReducedMotion } from "framer-motion";
 
 export const TopPageComponent = ({
   page,
@@ -18,6 +19,7 @@ export const TopPageComponent = ({
     sortReducer,
     { products, sort: SortEnum.Rating }
   );
+  const shouldReduceMotion = useReducedMotion();
 
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort });
@@ -45,7 +47,12 @@ export const TopPageComponent = ({
       <div role="list">
         {sortedProducts &&
           sortedProducts.map((p) => (
-            <Product role="list" layout key={p._id} product={p} />
+            <Product
+              role="listitem"
+              layout={shouldReduceMotion ? false : true}
+              key={p._id}
+              product={p}
+            />
           ))}
       </div>
       <div className={styles.hhTitle}>
