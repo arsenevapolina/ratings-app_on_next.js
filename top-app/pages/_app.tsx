@@ -3,7 +3,11 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { JSX } from "react";
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({
+  Component,
+  pageProps,
+  router,
+}: AppProps): JSX.Element {
   return (
     <>
       <Head>
@@ -16,7 +20,14 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;500;700;900&display=swap" rel="stylesheet" />
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
+        <meta
+          property="ag:url"
+          content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}
+        />
+        <meta property="ag:locale" content="ru_RU" />
       </Head>
       <Component {...pageProps} />
     </>
