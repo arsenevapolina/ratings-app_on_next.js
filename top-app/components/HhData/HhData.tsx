@@ -3,7 +3,6 @@ import styles from "./HhData.module.css";
 import { HhDataProps } from "./HhData.props";
 import { Card } from "../Card/Card";
 import RateIcon from "./rate.svg";
-import cn from "classnames";
 import { priceRu } from "@/helpers/helpers";
 
 export const HhData = ({
